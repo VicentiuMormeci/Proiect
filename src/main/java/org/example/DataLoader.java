@@ -28,17 +28,17 @@ public class DataLoader {
     private void loadProdus() throws IOException {
         List<String> produsInputData = IncarcareDate.readFile(IncarcareDate.CosCumparaturi_FILE_PATH);
         for (String produsInputDatum : produsInputData) {
-            String[] data = produsInputDatum.split(",");
-            Produs produsNou = createProdus(data);
+            String[] date = produsInputDatum.split(",");
+            Produs produsNou = createProdus(date);
             dataMap.put(produsNou, new ArrayList<>());
         }
     }
 
-    private Produs createProdus(String[] data) {
-        String nume = data[0];
-        double pret = Double.parseDouble(data[1]);
-        int discount = Integer.parseInt(data[2]);
-        int cantitate = Integer.parseInt(data[3]);
+    private Produs createProdus(String[] date) {
+        String nume = date[0];
+        double pret = Double.parseDouble(date[1]);
+        int discount = Integer.parseInt(date[2]);
+        int cantitate = Integer.parseInt(date[3]);
         return new Produs(nume,pret, discount,cantitate);
     }
 
