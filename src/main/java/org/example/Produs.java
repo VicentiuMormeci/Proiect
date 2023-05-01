@@ -8,28 +8,28 @@ public class Produs {
     private int discount;
     private int cantitate;
 
-
-    public Produs(String nume, double pret, int discount, int cantitate) {
-        this.nume = nume;
-        this.pret = pret;
-        this.discount = discount;
-        this.cantitate = cantitate;
-    }
-
-    public Produs(String nume, double pret, int cantitate) {
+    public Produs(String nume, double pret, int discount,int cantitate){
         this.nume=nume;
         this.pret=pret;
+//        this.discount=discount;
         this.cantitate=cantitate;
     }
 
-    public Produs() {
-
+    public Produs(String nume, double pret, int cantitate) {
     }
 
     public void afiseazaDateProdus(){
         System.out.println("Produsul ales este: " + this.nume +
                 "\n Avand pretul de: " + this.pret + " Lei" +
                 "\n Si o cantitate de: " + this.cantitate );
+    }
+
+    public int getCantitate() {
+        return cantitate;
+    }
+
+    public void setCantitate(int cantitate) {
+        this.cantitate = cantitate;
     }
 
     public String getNume() {
@@ -68,11 +68,15 @@ public class Produs {
     }
 
     @Override
+    public String toString() {
+        return nume + "," + pret + "," + discount + "," + cantitate;
+    }
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Produs)) return false;
         Produs produs = (Produs) o;
-        return Double.compare(produs.getPret(), getPret()) == 0 && getDiscount() == produs.getDiscount() && cantitate == produs.cantitate && Objects.equals(getNume(), produs.getNume());
+        return Double.compare(produs.getPret(), getPret()) == 0 && getDiscount() == produs.getDiscount() && getCantitate() == produs.getCantitate() && Objects.equals(getNume(), produs.getNume());
     }
 
     @Override
@@ -80,13 +84,5 @@ public class Produs {
         return Objects.hash(getNume(), getPret(), getDiscount(), cantitate);
     }
 
-    @Override
-    public String toString() {
-        return "Produs{" +
-                "nume='" + nume + '\'' +
-                ", pret=" + pret +
-                ", discount=" + discount +
-                ", cantitate=" + cantitate +
-                '}';
-    }
+
 }

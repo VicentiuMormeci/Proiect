@@ -1,2 +1,2 @@
-Produs{nume='pants', pret=222.0, discount=0, cantitate=2}
-Produs{nume='t-shirt', pret=222.0, discount=0, cantitate=2}
+pants,222.0,0,1
+t-shirt,111.0,0,2

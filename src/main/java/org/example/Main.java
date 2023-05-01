@@ -82,19 +82,19 @@ public class Main {
                 case 3:
                     System.out.println("CosCumparaturi: ");
                     System.out.println("In cos aveti urmatoarele produse: ");
+                    metode.afisareProdus(date);
                     System.out.println("Pentru a finaliza cumparaturile apasati tasta 4:");
 
-                    metode.afisareProdus(date);
                     ds.saveData(date);
                     break;
                 case 4:
                     System.out.println("Metode de plata:");
-                    metode.afisareMetodaPlata();
+//                    metode.afisareMetodaPlata();
                     break;
 
                 case 5:
-                    Produs produseNoi = new Produs();
-                    produseNoi.afiseazaDateProdus();
+//                    Produs produseNoi = new Produs(nume,pret,cantitate);
+//                    produseNoi.afiseazaDateProdus();
                     break;
 
             }
